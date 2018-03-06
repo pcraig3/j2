@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w server -w pages",
     "build": "next build",
-    "start": "node server",
+    "dev": "nodemon -w server -w pages",
+    "export": "next export",
+    "start": "NODE_ENV=production node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
