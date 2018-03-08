@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { assetPrefix } from '../node-env.js'
 
 export default () => (
   <div className="logo">
-    <Link href="/">
+    <Link href="/" as={`${assetPrefix}/`}>
       <a>
         <span>julia</span>
         <br />

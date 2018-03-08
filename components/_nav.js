@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { assetPrefix } from '../node-env.js'
 
 export default () => (
   <nav className="point-right">
-    <Link href="/about">
+    <Link href="/about" as={`${assetPrefix}/about`}>
       <a>about</a>
     </Link>
-    <Link href="/portfolio">
+    <Link href="/portfolio" as={`${assetPrefix}/portfolio`}>
       <a>portfolio</a>
     </Link>
-    <Link href="/contact">
+    <Link href="/contact" as={`${assetPrefix}/contact`}>
       <a>contact</a>
     </Link>
     <style jsx>{`
