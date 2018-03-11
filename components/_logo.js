@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { assetPrefix } from '../node-env.js'
+import { assetPrefix } from '../node-env'
 import { css } from 'react-emotion'
 
 const logoStyles = css`

@@ -1,19 +1,20 @@
 import Link from 'next/link'
+import { pointLeftLinks } from '../components/__styles'
 import Layout from '../components/layout'
 import { css } from 'react-emotion'
 
-const linkStyles = css`
+const mainStyles = css`
   a {
+    padding-left: 4px;
     padding-right: 4px;
-    padding-left: 50px;
+    margin-left: -4px;
   }
+
+  ${pointLeftLinks};
 `
 export default () => (
-  <Layout
-    title="contact julia craig dot CA"
-    className={`point-left ${linkStyles}`}
-  >
-    <div className={linkStyles}>
+  <Layout title="contact julia craig dot CA" className={mainStyles}>
+    <div>
       <p>Email</p>
       <p>
         <Link href="mailto:juliacraig3@cmail.carleton.ca">
