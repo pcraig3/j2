@@ -1,26 +1,61 @@
 import { css } from 'react-emotion'
 
-export const globalStyles = `
+export const ratio = parseFloat(1.333)
+export const fontSizes = {
+  base: 1,
+  md: 1,
+  sm: 1 / ratio,
+  xs: 1 / (ratio * ratio),
+  lg: 1 * ratio,
+  xl: 1 * (ratio * ratio),
+  xxl: 1 * (ratio * ratio * ratio),
+}
+
+export const spacingBase = 30
+export const spacing = {
+  base: spacingBase,
+  md: spacingBase,
+  sm: spacingBase / (ratio * ratio),
+  xs: spacingBase / (ratio * ratio * ratio),
+  lg: spacingBase * ratio,
+  xl: spacingBase * (ratio * ratio),
+  xxl: spacingBase * (ratio * ratio * ratio),
+}
+
+export const typograpyStyles = `
   html {
-    font-family: sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
+    font-size: 150%;
+    line-height: 1.25;
   }
-  #wrapper * {
-    border: 1px solid orange;
+  body {
+    font-size: ${fontSizes['md']}rem;
   }
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  h1, h2 {
+    margin-bottom: ${spacing['xl']}px;
+    line-height: 1.25;
   }
-  a,
-  a:visited {
-    display: inline-block;
-    text-decoration: none;
-    color: mediumslateblue;
+  h3, h4, h5, h6 {
+    margin-bottom: ${spacing['md']}px;
+    line-height: 1.25;
+  }
+  h1 {
+    font-size: ${fontSizes['xxl']}rem;
+  }
+  h2 {
+    font-size: ${fontSizes['xl']}rem;
+    margin-bottom: ${spacing['xl']}px;
+  }
+  h3, h4, h5, h6 {
+    font-size: ${fontSizes['lg']}rem;
+  }
+  blockquote {
+    margin-left: ${spacing['md']}px;
+  }
+  p {
+    margin-bottom: ${spacing['md']}px;
+  }
+  li {
+    margin-bottom: ${spacing['xs']}px;
   }
 `
 

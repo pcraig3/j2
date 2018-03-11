@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { css, injectGlobal } from 'react-emotion'
 import {
-  globalStyles,
+  typograpyStyles,
   layoutStyles,
   headerStyles,
   mainStyles,
@@ -10,8 +10,29 @@ import Logo from './_logo'
 import Nav from './_nav'
 import Footer from './_footer'
 
-injectGlobal`
-  ${globalStyles}
+const globalStyles = injectGlobal`
+  html {
+    font-family: sans-serif;
+    text-transform: uppercase;
+  }
+  #wrapper * {
+    border: 1px solid orange;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  a:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: mediumslateblue;
+  }
+
+  ${typograpyStyles}
 `
 
 export default ({
