@@ -1,12 +1,16 @@
 import Link from 'next/link'
-import { assetPrefix } from '../node-env'
 import { css } from 'react-emotion'
-import { bisqueLinks, pointRightLinks } from './__styles'
+import { assetPrefix } from '../node-env'
+import { spacing, bisqueLinks, pointRightLinks } from './__styles'
 
 const navStyles = css`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  a {
+    margin-bottom: ${spacing.xxs}px;
+  }
 
   ${bisqueLinks};
   ${pointRightLinks};

@@ -14,6 +14,7 @@ const globalStyles = injectGlobal`
   html {
     font-family: sans-serif;
     text-transform: uppercase;
+    overflow-y: scroll;
   }
   #wrapper * {
     border: 1px solid orange;

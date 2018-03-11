@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { assetPrefix } from '../node-env'
 import { css } from 'react-emotion'
+import { assetPrefix } from '../node-env'
+import { fontSizes, spacing } from './__styles'
 
 const logoStyles = css`
   display: inline-block;
-  font-size: 36px;
-  margin-bottom: 60px;
+  font-size: ${fontSizes.lg}rem;
+  margin-bottom: ${spacing.xl}px;
 
   & a,
   & a:visited {

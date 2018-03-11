@@ -1,6 +1,6 @@
 import { css } from 'react-emotion'
 
-export const ratio = parseFloat(1.333)
+export const ratio = parseFloat(1.414)
 export const fontSizes = {
   base: 1,
   md: 1,
@@ -15,11 +15,12 @@ export const spacingBase = 30
 export const spacing = {
   base: spacingBase,
   md: spacingBase,
-  sm: spacingBase / (ratio * ratio),
-  xs: spacingBase / (ratio * ratio * ratio),
-  lg: spacingBase * ratio,
-  xl: spacingBase * (ratio * ratio),
-  xxl: spacingBase * (ratio * ratio * ratio),
+  sm: spacingBase / 2,
+  xs: spacingBase / 3,
+  xxs: spacingBase / 6,
+  lg: parseInt(spacingBase * 1.35),
+  xl: spacingBase * 2,
+  xxl: spacingBase * 3,
 }
 
 export const typograpyStyles = `
@@ -28,34 +29,43 @@ export const typograpyStyles = `
     line-height: 1.25;
   }
   body {
-    font-size: ${fontSizes['md']}rem;
+    font-size: ${fontSizes.md}rem;
   }
   h1, h2 {
-    margin-bottom: ${spacing['xl']}px;
+    margin-bottom: ${spacing.xl}px;
     line-height: 1.25;
   }
   h3, h4, h5, h6 {
-    margin-bottom: ${spacing['md']}px;
+    margin-bottom: ${spacing.md}px;
     line-height: 1.25;
   }
   h1 {
-    font-size: ${fontSizes['xxl']}rem;
+    font-size: ${fontSizes.xxl}rem;
   }
   h2 {
-    font-size: ${fontSizes['xl']}rem;
-    margin-bottom: ${spacing['xl']}px;
+    font-size: ${fontSizes.xl}rem;
+    margin-bottom: ${spacing.xl}px;
   }
   h3, h4, h5, h6 {
-    font-size: ${fontSizes['lg']}rem;
+    font-size: ${fontSizes.lg}rem;
   }
   blockquote {
-    margin-left: ${spacing['md']}px;
+    margin-left: ${spacing.md}px;
   }
   p {
-    margin-bottom: ${spacing['md']}px;
+    margin-bottom: ${spacing.md}px;
   }
-  li {
-    margin-bottom: ${spacing['xs']}px;
+
+  ul, ol {
+    margin-bottom: ${spacing.md}px;
+
+    li {
+      margin-bottom: ${spacing.xxs}px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 `
 
@@ -103,7 +113,7 @@ export const layoutStyles = css`
   flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 60px;
+  margin: ${spacing.xl}px;
 `
 
 export const headerStyles = css`
@@ -112,16 +122,16 @@ export const headerStyles = css`
 
   a,
   span {
-    padding: 0 4px;
+    padding: 0 ${spacing.xxs}px;
   }
 `
 
 export const mainStyles = css`
   flex: 3;
-  margin-right: 60px;
+  margin-right: ${spacing.xl}px;
 
   div {
-    margin-bottom: 30px;
+    margin-bottom: ${spacing.md}px;
   }
 
   ${bisqueLinks};

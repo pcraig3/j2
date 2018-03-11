@@ -1,42 +1,46 @@
 import Link from 'next/link'
-import { pointLeftLinks } from '../components/__styles'
-import Layout from '../components/layout'
 import { css } from 'react-emotion'
+import { spacing, pointLeftLinks } from '../components/__styles'
+import Layout from '../components/layout'
 
 const mainStyles = css`
+  span {
+    display: block;
+  }
+
   a {
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-left: -4px;
+    padding-left: ${spacing.xxs}px;
+    padding-right: ${spacing.xxs}px;
+    margin-left: -${spacing.xxs}px;
   }
 
   ${pointLeftLinks};
 `
 export default () => (
   <Layout title="contact julia craig dot CA" className={mainStyles}>
-    <div>
-      <p>Email</p>
-      <p>
+    <p>
+      <span>Email</span>
+      <span>
         <Link href="mailto:juliacraig3@cmail.carleton.ca">
           <a title="pls no spam">juliacraig3@cmail.carleton.ca</a>
         </Link>
-      </p>
-    </div>
-    <div>
-      <p>Twitter</p>
-      <p>
+      </span>
+    </p>
+    <p>
+      <span>Twitter</span>
+      <span>
         <Link href="https://twitter.com/JayCraig1101">
           <a title="pls tweet at me">@JayCraig1101</a>
         </Link>
-      </p>
-    </div>
-    <div>
-      <p>Facebook</p>
-      <p>
+      </span>
+    </p>
+    <p>
+      <span>Facebook</span>
+      <span>
         <Link href="https://www.facebook.com/julia.craig.904">
           <a title="pls be my friend">julia.craig.904</a>
         </Link>
-      </p>
-    </div>
+      </span>
+    </p>
   </Layout>
 )

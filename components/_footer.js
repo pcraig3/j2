@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import { css } from 'react-emotion'
+import { fontSizes, spacing } from './__styles'
 
 const footerStyles = css`
   position: fixed;
-    bottom: 2px;
-    right: 64px; /* 4px extra to account for the padding */
-    font-size: 11px;
+    bottom: ${spacing.xxs}px;
+    right: ${spacing.xl + spacing.xxs}px; /* 5px extra to account for padding */
+    font-size: ${fontSizes.xs}rem;
     font-family: sans-serif;
     text-transform: lowercase;
-    opacity: 0.25;
+    opacity: 0.2;
   }
   &:hover {
     opacity: .5;
