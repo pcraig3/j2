@@ -16,8 +16,12 @@ const mainStyles = css`
 
   ${pointLeftLinks};
 `
-export default () => (
-  <Layout title="contact julia craig dot CA" className={mainStyles}>
+export default ({ url }) => (
+  <Layout
+    title="contact julia craig dot CA"
+    className={mainStyles}
+    query={url.query}
+  >
     <p>
       <span>Email</span>
       <span>

@@ -16,9 +16,6 @@ const globalStyles = injectGlobal`
     text-transform: uppercase;
     overflow-y: scroll;
   }
-  #wrapper * {
-    border: 1px solid orange;
-  }
   *,
   *::before,
   *::after {
@@ -36,12 +33,26 @@ const globalStyles = injectGlobal`
   ${typograpyStyles}
 `
 
+const outlineAll = function(outline) {
+  return outline === undefined
+    ? ``
+    : !outline
+      ? `* { outline: 1px solid orange;}`
+      : `* { outline: 1px solid ${outline};}`
+}
+
 export default ({
   children,
   title = 'julia craig dot CA',
   className = css``,
+  query,
 }) => (
-  <div id="wrapper" className={layoutStyles}>
+  <div
+    id="wrapper"
+    className={css`
+      ${outlineAll(query.outline)} ${layoutStyles};
+    `}
+  >
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
