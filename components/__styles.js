@@ -6,6 +6,9 @@ export const globalStyles = `
     font-size: 24px;
     text-transform: uppercase;
   }
+  #wrapper * {
+    border: 1px solid orange;
+  }
   *,
   *::before,
   *::after {

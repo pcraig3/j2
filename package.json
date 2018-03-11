@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "be": "yarn build && yarn export",
+    "be": "npm run build && npm run export",
     "build": "next build",
     "dev": "node server.js",
     "export": "next export",
