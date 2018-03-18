@@ -24,7 +24,8 @@ export const spacing = {
 }
 
 const breakpoints = {
-  xs: 480,
+  xxs: 321,
+  xs: 440,
   sm: 641, // this is the govuk 'tablet' size
   md: 768,
   lg: 992,
@@ -194,11 +195,6 @@ export const headerStyles = css`
   ${mq.md(css`
     top: ${spacing.xl}px;
   `)};
-
-  a,
-  span {
-    padding: 0 ${spacing.xxs}px;
-  }
 `
 
 export const mainStyles = css`

@@ -1,3 +1,4 @@
+import { Component } from 'react'
 import Head from 'next/head'
 import { css, injectGlobal } from 'react-emotion'
 import {
@@ -46,36 +47,64 @@ const outlineAll = function(outline) {
       : `* { outline: 1px solid ${outline};}`
 }
 
-export default ({
-  children,
-  title = 'julia craig dot CA',
-  className = css``,
-  query = {},
-}) => (
-  <div
-    id="wrapper"
-    className={css`
-      ${outlineAll(query.outline)} ${layoutStyles};
-    `}
-  >
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header className={headerStyles}>
-      <Logo />
-      <Nav />
-    </header>
+class Layout extends Component {
+  constructor(props) {
+    super(props)
+    this.onToggle = this.onToggle.bind(this)
+    this.state = { showMenu: false }
+  }
 
-    <main
-      className={css`
-        ${mainStyles} ${className};
-      `}
-    >
-      {children}
-    </main>
+  onToggle(e) {
+    this.setState(prevState => {
+      return { showMenu: !prevState.showMenu }
+    })
+  }
 
-    <Footer />
-  </div>
-)
+  render() {
+    const { children, title, className, query } = this.props
+
+    return (
+      <div
+        id="wrapper"
+        className={css`
+          ${outlineAll(query.outline)} ${layoutStyles};
+        `}
+      >
+        <Head>
+          <title>{title}</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+        <header
+          className={`${this.state.showMenu ? 'show-menu ' : 'hide-menu '}${css`
+            ${headerStyles};
+          `}`}
+        >
+          <Logo />
+          <Nav showMenu={this.state.showMenu} onToggle={this.onToggle} />
+        </header>
+        <main
+          className={css`
+            ${mainStyles} ${className};
+          `}
+        >
+          {children}
+        </main>
+
+        <Footer />
+      </div>
+    )
+  }
+}
+
+Layout.defaultProps = {
+  children: {},
+  title: 'julia craig dot CA',
+  className: css``,
+  query: {},
+}
+
+export default Layout

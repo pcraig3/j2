@@ -10,8 +10,12 @@ const logoStyles = css`
   display: inline-block;
   font-size: ${fontSizes.lg}rem;
 
+  .show-menu & {
+    display: none;
+  }
+
   ${mq.xs(css`
-    left: ${spacing.sm}px;
+    left: ${spacing.md}px;
   `)};
 
   ${mq.sm(css`
@@ -19,6 +23,10 @@ const logoStyles = css`
     bottom: initial;
     left: initial;
     margin-bottom: ${spacing.xl}px;
+
+    .show-menu & {
+      display: inline-block;
+    }
   `)};
 
   & br {
@@ -40,6 +48,7 @@ const logoStyles = css`
     background-color: inherit;
   }
   & a span {
+    padding: 0 ${spacing.xxs}px;
     display: inline-block;
     background-color: bisque;
     border-bottom: 2px solid black;
