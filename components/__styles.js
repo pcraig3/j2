@@ -24,14 +24,14 @@ export const spacing = {
 }
 
 const breakpoints = {
-  xs: 321,
+  xs: 480,
   sm: 641, // this is the govuk 'tablet' size
   md: 768,
   lg: 992,
   xl: 1200,
 }
 
-const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
+export const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
   let prefix = typeof breakpoints[label] === 'string' ? '' : 'min-width:'
   let suffix = typeof breakpoints[label] === 'string' ? '' : 'px'
   accumulator[label] = cls =>
@@ -102,6 +102,10 @@ export const typograpyStyles = css`
       }
     }
   }
+
+  button {
+    font-size: ${fontSizes.md}rem;
+  }
 `
 
 export const bisqueLinks = css`
@@ -148,7 +152,11 @@ export const layoutStyles = css`
   flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: ${spacing.md}px;
+  margin: ${spacing.sm}px;
+
+  ${mq.xs(css`
+    margin: ${spacing.md}px;
+  `)};
 
   ${mq.sm(css`
     margin: ${spacing.lg}px;
@@ -164,8 +172,14 @@ export const headerStyles = css`
   bottom: 0;
   right: 0;
   width: 100%;
-  padding: ${spacing.sm}px ${spacing.md}px;
+  padding: ${spacing.sm}px ${spacing.sm}px;
   text-align: right;
+  border-top: 2px solid bisque;
+  background-color: white;
+
+  ${mq.xs(css`
+    padding: ${spacing.sm}px ${spacing.md}px;
+  `)};
 
   ${mq.sm(css`
     position: sticky;
@@ -173,6 +187,8 @@ export const headerStyles = css`
     flex: 1;
     padding: 0;
     width: initial;
+    border-top: none;
+    background-color: transparent;
   `)};
 
   ${mq.md(css`
@@ -187,7 +203,11 @@ export const headerStyles = css`
 
 export const mainStyles = css`
   flex: 4;
-  margin-right: ${spacing.xs}px;
+  margin-right: 0;
+
+  ${mq.sm(css`
+    margin-right: ${spacing.xs}px;
+  `)};
 
   ${mq.md(css`
     flex: 3;

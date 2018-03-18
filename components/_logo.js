@@ -1,12 +1,33 @@
 import Link from 'next/link'
 import { css } from 'react-emotion'
 import { assetPrefix } from '../node-env'
-import { fontSizes, spacing } from './__styles'
+import { fontSizes, mq, spacing } from './__styles'
 
 const logoStyles = css`
+  position: fixed;
+  bottom: ${spacing.sm}px;
+  left: ${spacing.sm}px;
   display: inline-block;
   font-size: ${fontSizes.lg}rem;
-  margin-bottom: ${spacing.xl}px;
+
+  ${mq.xs(css`
+    left: ${spacing.sm}px;
+  `)};
+
+  ${mq.sm(css`
+    position: static;
+    bottom: initial;
+    left: initial;
+    margin-bottom: ${spacing.xl}px;
+  `)};
+
+  & br {
+    display: none;
+
+    ${mq.sm(css`
+      display: initial;
+    `)};
+  }
 
   & a,
   & a:visited {

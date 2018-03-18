@@ -24,8 +24,12 @@ const globalStyles = injectGlobal`
     margin: 0;
     padding: 0;
   }
+  *:focus {
+    outline: 2px solid darkturquoise;
+  }
   a,
-  a:visited {
+  a:visited,
+  button {
     display: inline-block;
     text-decoration: none;
     color: mediumslateblue;
