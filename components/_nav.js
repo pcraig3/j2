@@ -49,6 +49,7 @@ const divStyles = css`
 
   a {
     padding: 0 ${spacing.xxs}px;
+    overflow: hidden;
 
     &:not(:last-of-type) {
       margin-bottom: ${spacing.xxs}px;
