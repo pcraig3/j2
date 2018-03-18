@@ -16,6 +16,7 @@ const globalStyles = injectGlobal`
     text-transform: uppercase;
     overflow-y: scroll;
   }
+
   *,
   *::before,
   *::after {
@@ -30,7 +31,7 @@ const globalStyles = injectGlobal`
     color: mediumslateblue;
   }
 
-  ${typograpyStyles}
+  ${typograpyStyles};
 `
 
 const outlineAll = function(outline) {
@@ -45,7 +46,7 @@ export default ({
   children,
   title = 'julia craig dot CA',
   className = css``,
-  query,
+  query = {},
 }) => (
   <div
     id="wrapper"

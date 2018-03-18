@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 const mainStyles = css`
   span {
     display: block;
+    margin-bottom: ${spacing.xxs}px;
   }
 
   a {
@@ -26,7 +27,9 @@ export default ({ url }) => (
       <span>Email</span>
       <span>
         <Link href="mailto:juliacraig3@cmail.carleton.ca">
-          <a title="pls no spam">juliacraig3@cmail.carleton.ca</a>
+          <a title="pls no spam">
+            juliacraig3<wbr />@cmail.carleton.ca
+          </a>
         </Link>
       </span>
     </p>

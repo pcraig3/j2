@@ -23,19 +23,50 @@ export const spacing = {
   xxl: spacingBase * 3,
 }
 
-export const typograpyStyles = `
+const breakpoints = {
+  xs: 321,
+  sm: 641, // this is the govuk 'tablet' size
+  md: 768,
+  lg: 992,
+  xl: 1200,
+}
+
+const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
+  let prefix = typeof breakpoints[label] === 'string' ? '' : 'min-width:'
+  let suffix = typeof breakpoints[label] === 'string' ? '' : 'px'
+  accumulator[label] = cls =>
+    css`
+      @media (${prefix + breakpoints[label] + suffix}) {
+        ${cls};
+      }
+    `
+  return accumulator
+}, {})
+
+export const typograpyStyles = css`
   html {
-    font-size: 150%;
+    font-size: 130%;
     line-height: 1.25;
+    ${mq.sm(css`
+      font-size: 140%;
+    `)};
+
+    ${mq.md(css`
+      font-size: 150%;
+    `)};
   }
   body {
     font-size: ${fontSizes.md}rem;
   }
-  h1, h2 {
+  h1,
+  h2 {
     margin-bottom: ${spacing.xl}px;
     line-height: 1.25;
   }
-  h3, h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: ${spacing.md}px;
     line-height: 1.25;
   }
@@ -46,7 +77,10 @@ export const typograpyStyles = `
     font-size: ${fontSizes.xl}rem;
     margin-bottom: ${spacing.xl}px;
   }
-  h3, h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: ${fontSizes.lg}rem;
   }
   blockquote {
@@ -56,7 +90,8 @@ export const typograpyStyles = `
     margin-bottom: ${spacing.md}px;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-bottom: ${spacing.md}px;
 
     li {
@@ -113,12 +148,36 @@ export const layoutStyles = css`
   flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: ${spacing.xl}px;
+  margin: ${spacing.md}px;
+
+  ${mq.sm(css`
+    margin: ${spacing.lg}px;
+  `)};
+
+  ${mq.md(css`
+    margin: ${spacing.xl}px;
+  `)};
 `
 
 export const headerStyles = css`
-  flex: 1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: ${spacing.sm}px ${spacing.md}px;
   text-align: right;
+
+  ${mq.sm(css`
+    position: sticky;
+    top: ${spacing.lg}px;
+    flex: 1;
+    padding: 0;
+    width: initial;
+  `)};
+
+  ${mq.md(css`
+    top: ${spacing.xl}px;
+  `)};
 
   a,
   span {
@@ -127,8 +186,13 @@ export const headerStyles = css`
 `
 
 export const mainStyles = css`
-  flex: 3;
-  margin-right: ${spacing.xl}px;
+  flex: 4;
+  margin-right: ${spacing.xs}px;
+
+  ${mq.md(css`
+    flex: 3;
+    margin-right: ${spacing.xl}px;
+  `)};
 
   div {
     margin-bottom: ${spacing.md}px;
