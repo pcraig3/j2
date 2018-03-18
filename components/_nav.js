@@ -25,6 +25,7 @@ const navStyles = css`
 `
 
 const divStyles = css`
+  order: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -60,6 +61,7 @@ const divStyles = css`
 `
 
 const buttonStyles = css`
+  order: 2;
   border: none;
   background-color: transparent;
   text-transform: uppercase;
@@ -116,6 +118,7 @@ const ToggleButton = ({ onToggle, showMenu }) => {
 
 export default ({ onToggle, showMenu }) => (
   <nav className={navStyles}>
+    <ToggleButton onToggle={onToggle} showMenu={showMenu} />
     <div className={divStyles}>
       <Link href="/about" as={`${assetPrefix}/about`}>
         <a>about</a>
@@ -127,6 +130,5 @@ export default ({ onToggle, showMenu }) => (
         <a>contact</a>
       </Link>
     </div>
-    <ToggleButton onToggle={onToggle} showMenu={showMenu} />
   </nav>
 )
