@@ -200,9 +200,11 @@ export const headerStyles = css`
 export const mainStyles = css`
   flex: 4;
   margin-right: 0;
+  margin-bottom: ${spacing.md}px;
 
   ${mq.sm(css`
     margin-right: ${spacing.xs}px;
+    margin-bottom: 0;
   `)};
 
   ${mq.md(css`
