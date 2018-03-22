@@ -29,7 +29,7 @@ const logoStyles = css`
     }
   `)};
 
-  & br {
+  .js-enabled & br {
     display: none;
 
     ${mq.sm(css`

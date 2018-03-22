@@ -13,3 +13,4 @@
 - ✅ fix footer on mobile
 - ✅ add margin to page content on small screens to account for fixed menu
 - ✅ outlines around links are larger than background
+- ✅ menu works without javascript

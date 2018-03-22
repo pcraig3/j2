@@ -32,7 +32,7 @@ const divStyles = css`
   justify-content: flex-end;
   margin-left: -${spacing.xxs}px;
 
-  .hide-menu & {
+  .js-enabled .hide-menu & {
     display: none;
   }
 
@@ -43,7 +43,7 @@ const divStyles = css`
   `)};
 
   ${mq.sm(css`
-    .hide-menu & {
+    .js-enabled .hide-menu & {
       display: flex;
     }
   `)};
@@ -61,6 +61,10 @@ const divStyles = css`
 `
 
 const buttonStyles = css`
+  .no-js & {
+    display: none;
+  }
+
   order: 2;
   border: none;
   background-color: transparent;
