@@ -18,7 +18,12 @@ const mainStyles = css`
   ${pointLeftLinks};
 `
 export default ({ url }) => (
-  <Layout title="contact julia craig dot CA" className={mainStyles} url={url}>
+  <Layout
+    title="contact julia craig dot CA"
+    className={mainStyles}
+    url={url}
+    h1="Contact"
+  >
     <p>
       <span>Email</span>
       <span>

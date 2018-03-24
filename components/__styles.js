@@ -32,6 +32,17 @@ const breakpoints = {
   xl: 1200,
 }
 
+export const visuallyhidden = css`
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+`
+
 export const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
   let prefix = typeof breakpoints[label] === 'string' ? '' : 'min-width:'
   let suffix = typeof breakpoints[label] === 'string' ? '' : 'px'

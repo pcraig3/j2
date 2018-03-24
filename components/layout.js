@@ -6,6 +6,7 @@ import {
   layoutStyles,
   headerStyles,
   mainStyles,
+  visuallyhidden,
 } from './__styles'
 import Logo from './_logo'
 import Nav from './_nav'
@@ -68,7 +69,13 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, title, className, url: { query, pathname } } = this.props
+    const {
+      children,
+      title,
+      className,
+      url: { query, pathname },
+      h1,
+    } = this.props
     return (
       <div
         id="wrapper"
@@ -101,6 +108,7 @@ class Layout extends Component {
             ${mainStyles} ${className};
           `}
         >
+          {h1 ? <h1 className={visuallyhidden}>{h1}</h1> : ''}
           {children}
         </main>
 
@@ -114,7 +122,8 @@ Layout.defaultProps = {
   children: {},
   title: 'julia craig dot CA',
   className: css``,
-  query: {},
+  url: {},
+  h1: null,
 }
 
 export default Layout
