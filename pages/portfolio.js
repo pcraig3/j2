@@ -1,7 +1,7 @@
 import Layout from '../components/layout'
 
 export default ({ url }) => (
-  <Layout title="portfolio of julia craig dot CA" query={url.query}>
+  <Layout title="portfolio of julia craig dot CA" url={url}>
     <div>
       <p>👷‍♀️ 🚧 👷‍</p>
     </div>

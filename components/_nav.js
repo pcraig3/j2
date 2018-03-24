@@ -120,19 +120,21 @@ const ToggleButton = ({ onToggle, showMenu }) => {
   )
 }
 
-export default ({ onToggle, showMenu }) => (
+const NavLink = ({ path, pathname }) => (
+  <Link href={path} as={`${assetPrefix}${path}`}>
+    <a {...(path === pathname ? { 'aria-current': 'page' } : {})}>
+      {path.split('/').pop()}
+    </a>
+  </Link>
+)
+
+export default ({ onToggle, showMenu, pathname }) => (
   <nav className={navStyles}>
     <ToggleButton onToggle={onToggle} showMenu={showMenu} />
     <div className={divStyles}>
-      <Link href="/about" as={`${assetPrefix}/about`}>
-        <a>about</a>
-      </Link>
-      <Link href="/portfolio" as={`${assetPrefix}/portfolio`}>
-        <a>portfolio</a>
-      </Link>
-      <Link href="/contact" as={`${assetPrefix}/contact`}>
-        <a>contact</a>
-      </Link>
+      <NavLink path="/about" pathname={pathname} />
+      <NavLink path="/portfolio" pathname={pathname} />
+      <NavLink path="/contact" pathname={pathname} />
     </div>
   </nav>
 )

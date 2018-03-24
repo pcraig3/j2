@@ -1,7 +1,7 @@
 import Layout from '../components/layout'
 
 export default ({ url }) => (
-  <Layout title="typography for julia craig dot CA" query={url.query}>
+  <Layout title="typography for julia craig dot CA" url={url}>
     <h1>Heart of Darkness</h1>
     <h2>By Joseph Conrad</h2>
     <h3>Contents</h3>

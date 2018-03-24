@@ -73,8 +73,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, title, className, query } = this.props
-
+    const { children, title, className, url: { query, pathname } } = this.props
     return (
       <div
         id="wrapper"
@@ -96,7 +95,11 @@ class Layout extends Component {
           `}`}
         >
           <Logo />
-          <Nav showMenu={this.state.showMenu} onToggle={this.onToggle} />
+          <Nav
+            showMenu={this.state.showMenu}
+            onToggle={this.onToggle}
+            pathname={pathname}
+          />
         </header>
         <main
           className={css`
