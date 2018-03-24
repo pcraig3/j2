@@ -124,7 +124,8 @@ const _pointLinks = css`
     }
   }
   a:hover,
-  a:focus {
+  a:focus,
+  a[aria-current] {
     &::before,
     &::after {
       visibility: visible;
@@ -138,6 +139,9 @@ export const pointLeftLinks = css`
   a::after {
     content: '\00a0☜';
   }
+  a::before {
+    content: none;
+  }
 `
 
 export const pointRightLinks = css`
@@ -145,6 +149,9 @@ export const pointRightLinks = css`
 
   a::before {
     content: '☞\00a0';
+  }
+  a::after {
+    content: none;
   }
 `
 

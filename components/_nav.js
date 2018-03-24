@@ -31,6 +31,7 @@ const divStyles = css`
   align-items: flex-start;
   justify-content: flex-end;
   margin-left: -${spacing.xxs}px;
+  ${pointLeftLinks};
 
   .js-enabled .hide-menu & {
     display: none;
