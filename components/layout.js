@@ -52,14 +52,9 @@ class Layout extends Component {
     super(props)
     this.onToggle = this.onToggle.bind(this)
     this.state = { showMenu: false, jsEnabled: false }
-    this.onLoad = this.onLoad.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('load', this.onLoad)
-  }
-
-  onLoad() {
     /* state change on load. only triggered when javascript is enabled */
     this.setState(prevState => {
       return { jsEnabled: true }
