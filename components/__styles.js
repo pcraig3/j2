@@ -131,7 +131,7 @@ const _pointLinks = css`
   a {
     &::before,
     &::after {
-      visibility: hidden;
+      color: transparent;
     }
   }
   a:hover,
@@ -139,7 +139,7 @@ const _pointLinks = css`
   a[aria-current] {
     &::before,
     &::after {
-      visibility: visible;
+      color: currentColor;
     }
   }
 `
