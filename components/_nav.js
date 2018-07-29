@@ -61,8 +61,11 @@ const divStyles = css`
   ${bisqueLinks};
 `
 
-const buttonStyles = css`
+const formStyles = css`
   order: 2;
+`
+
+const buttonStyles = css`
   border: none;
   background-color: transparent;
   text-transform: uppercase;
@@ -105,15 +108,24 @@ const buttonStyles = css`
 
 const ToggleButton = ({ onToggle, showMenu }) => {
   return (
-    <button className={buttonStyles} onClick={onToggle}>
-      {showMenu ? (
-        <span>x</span>
-      ) : (
-        <span>
-          m<span>enu</span>
-        </span>
-      )}
-    </button>
+    <form className={formStyles}>
+      <input type="hidden" name="showMenu" value={!showMenu} />
+      <button
+        className={buttonStyles}
+        onClick={e => {
+          e.preventDefault()
+          onToggle()
+        }}
+      >
+        {showMenu ? (
+          <span>x</span>
+        ) : (
+          <span>
+            m<span>enu</span>
+          </span>
+        )}
+      </button>
+    </form>
   )
 }
 

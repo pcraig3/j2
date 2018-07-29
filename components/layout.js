@@ -53,7 +53,7 @@ class Layout extends Component {
   constructor(props) {
     super(props)
     this.onToggle = this.onToggle.bind(this)
-    this.state = { showMenu: false }
+    this.state = { showMenu: this.props.router.query.showMenu === 'true' }
   }
 
   onToggle(e) {
