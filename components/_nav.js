@@ -118,9 +118,9 @@ const ToggleButton = ({ onToggle, showMenu }) => {
 }
 
 const NavLink = ({ path, pathname }) => (
-  <Link href={path} as={`${assetPrefix}${path}`}>
+  <Link prefetch href={path} as={`${assetPrefix}${path}`}>
     <a {...(path === pathname ? { 'aria-current': 'page' } : {})}>
-      {path.split('/').pop()}
+      {path === '/' ? 'Home' : path.split('/').pop()}
     </a>
   </Link>
 )
@@ -129,6 +129,7 @@ export default ({ onToggle, showMenu, pathname }) => (
   <nav className={navStyles}>
     <ToggleButton onToggle={onToggle} showMenu={showMenu} />
     <div className={divStyles}>
+      {showMenu ? <NavLink path="/" pathname={pathname} /> : ''}
       <NavLink path="/about" pathname={pathname} />
       <NavLink path="/portfolio" pathname={pathname} />
       <NavLink path="/contact" pathname={pathname} />
