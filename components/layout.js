@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Head from 'next/head'
+import { withRouter } from 'next/router'
 import { css, injectGlobal } from 'react-emotion'
 import {
   typograpyStyles,
@@ -66,7 +67,7 @@ class Layout extends Component {
       children,
       title,
       className,
-      url: { query, pathname },
+      router: { query, pathname },
       h1,
     } = this.props
     return (
@@ -119,4 +120,4 @@ Layout.defaultProps = {
   h1: null,
 }
 
-export default Layout
+export default withRouter(Layout)

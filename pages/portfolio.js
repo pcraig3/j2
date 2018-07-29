@@ -1,7 +1,7 @@
 import Layout from '../components/layout'
 
-export default ({ url }) => (
-  <Layout title="portfolio of julia craig dot CA" url={url} h1="Portfolio">
+export default () => (
+  <Layout title="portfolio of julia craig dot CA" h1="Portfolio">
     <div>
       <p>👷‍♀️ 🚧 👷‍</p>
     </div>
