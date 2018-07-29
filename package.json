@@ -6,7 +6,7 @@
   "scripts": {
     "be": "npm run build && npm run export",
     "build": "next build",
-    "dev": "node server.js",
+    "dev": "node server",
     "export": "next export",
     "start": "NODE_ENV=production node server",
     "test": "echo \"Error: no test specified\" && exit 1"

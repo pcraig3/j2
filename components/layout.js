@@ -52,14 +52,7 @@ class Layout extends Component {
   constructor(props) {
     super(props)
     this.onToggle = this.onToggle.bind(this)
-    this.state = { showMenu: false, jsEnabled: false }
-  }
-
-  componentDidMount() {
-    /* state change on load. only triggered when javascript is enabled */
-    this.setState(prevState => {
-      return { jsEnabled: true }
-    })
+    this.state = { showMenu: false }
   }
 
   onToggle(e) {
@@ -79,7 +72,7 @@ class Layout extends Component {
     return (
       <div
         id="wrapper"
-        className={`${this.state.jsEnabled ? 'js-enabled ' : 'no-js '}${css`
+        className={`${css`
           ${outlineAll(query.outline)} ${layoutStyles};
         `}`}
       >
