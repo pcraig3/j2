@@ -120,6 +120,9 @@ const ToggleButton = ({ onToggle, showMenu, pathname }) => {
           e.preventDefault()
           onToggle()
         }}
+        aria-controls="navLinks"
+        aria-expanded={showMenu}
+        aria-label="Toggle navigation"
       >
         {showMenu ? (
           <span>x</span>
@@ -144,7 +147,7 @@ const NavLink = ({ path, pathname }) => (
 export default ({ onToggle, showMenu, pathname }) => (
   <nav className={navStyles}>
     <ToggleButton onToggle={onToggle} showMenu={showMenu} pathname={pathname} />
-    <div className={divStyles}>
+    <div className={divStyles} id="navLinks">
       {showMenu ? <NavLink path="/" pathname={pathname} /> : ''}
       <NavLink path="/about" pathname={pathname} />
       <NavLink path="/portfolio" pathname={pathname} />
