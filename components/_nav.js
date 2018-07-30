@@ -106,10 +106,14 @@ const buttonStyles = css`
   }
 `
 
-const ToggleButton = ({ onToggle, showMenu }) => {
+const ToggleButton = ({ onToggle, showMenu, pathname }) => {
   return (
-    <form className={formStyles}>
-      <input type="hidden" name="showMenu" value={!showMenu} />
+    <form
+      className={formStyles}
+      action={
+        showMenu ? `${assetPrefix}${pathname}` : `${assetPrefix}/m${pathname}`
+      }
+    >
       <button
         className={buttonStyles}
         onClick={e => {
@@ -139,7 +143,7 @@ const NavLink = ({ path, pathname }) => (
 
 export default ({ onToggle, showMenu, pathname }) => (
   <nav className={navStyles}>
-    <ToggleButton onToggle={onToggle} showMenu={showMenu} />
+    <ToggleButton onToggle={onToggle} showMenu={showMenu} pathname={pathname} />
     <div className={divStyles}>
       {showMenu ? <NavLink path="/" pathname={pathname} /> : ''}
       <NavLink path="/about" pathname={pathname} />
