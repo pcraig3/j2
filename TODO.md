@@ -1,16 +1,25 @@
 # to do
 
-## general
 - add placeholder images
 - add real images
-- where does focus go when page reloads
-- add h1 to pages
+- check if header tags are being inserted more than once
+- axe scan
+- pally scan
+- wcag colour contrast
 
-### menu
-- move menu button before options
-- add active attribute to selected menu item
-- style active menu item
-- fix footer on mobile
-- add margin to page content on small screens to account for fixed menu
-- outlines around links are larger than background
-- ❌ menu works without javascript
+# done
+
+- ✅ break words typography on small phones
+- ✅ local export
+- ✅ add aria attributes to menu
+- ✅ ios bug whereby you have to click menu links twice
+- ✅ menu works without javascript
+  - ✅ on `npm run dev`
+  - ✅ on static export
+- ✅ add h1 to pages
+- ✅ move menu button before options
+- ✅ add active attribute to selected menu item
+- ✅ style active menu item
+- ✅ fix footer on mobile
+- ✅ add margin to page content on small screens to account for fixed menu
+- ✅ outlines around links are larger than background
