@@ -1,7 +1,8 @@
-const assetPrefix = process.env.NODE_ENV === 'production' ? '/j2' : ''
-
 module.exports = {
-  assetPrefix: assetPrefix,
+  assetPrefix:
+    typeof process.env.ASSET_PREFIX === 'string'
+      ? process.env.ASSET_PREFIX.trim()
+      : '',
   exportPathMap: function() {
     return {
       '/': { page: '/' },

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { css } from 'react-emotion'
-import { assetPrefix } from '../node-env'
+import { assetPrefix } from '../next.config'
 import {
   bisqueLinks,
   mq,

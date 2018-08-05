@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "be": "npm run build && npm run export",
+    "be": "set ASSET_PREFIX=j2 && npm run build && npm run export",
     "build": "next build",
     "dev": "node server",
     "export": "next export",
