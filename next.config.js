@@ -1,4 +1,11 @@
-module.exports = {
+const withOptimizedImages = require('next-optimized-images')
+
+module.exports = withOptimizedImages({
+  /* config for next-optimized-images */
+  imagesFolder: 'img',
+  optimizeImagesInDev: true,
+
+  /* config for general next.js */
   assetPrefix:
     typeof process.env.ASSET_PREFIX === 'string'
       ? process.env.ASSET_PREFIX.trim()
@@ -17,4 +24,4 @@ module.exports = {
       '/m/typography': { page: '/typography', query: { showMenu: 'true' } },
     }
   },
-}
+})

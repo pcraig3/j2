@@ -38,6 +38,11 @@ const globalStyles = injectGlobal`
     color: mediumslateblue;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   ${typograpyStyles};
 `
 

@@ -8,5 +8,8 @@ export default () => (
     <div>
       <p>Exhibition is being installed.</p>
     </div>
+    <div>
+      <img src={require('../img/laiyuhsiang-146977-unsplash.jpg')} />
+    </div>
   </Layout>
 )
