@@ -70,30 +70,41 @@ export const typograpyStyles = css`
   body {
     font-size: ${fontSizes.md}rem;
   }
-  h1,
-  h2 {
+  h1 {
     margin-bottom: ${spacing.xl}px;
-    line-height: 1.25;
+  }
+  h2 {
+    margin-bottom: ${spacing.md}px;
+    ${mq.xs(css`
+      margin-top: ${spacing.xl}px;
+    `)};
   }
   h3,
   h4,
   h5,
   h6 {
     margin-bottom: ${spacing.md}px;
-    line-height: 1.25;
   }
   h1 {
-    font-size: ${fontSizes.xxl}rem;
+    font-size: ${fontSizes.xl}rem;
+    ${mq.xs(css`
+      font-size: ${fontSizes.xxl}rem;
+    `)};
   }
   h2 {
-    font-size: ${fontSizes.xl}rem;
-    margin-bottom: ${spacing.xl}px;
+    font-size: ${fontSizes.lg}rem;
+    ${mq.xs(css`
+      font-size: ${fontSizes.xl}rem;
+    `)};
   }
   h3,
   h4,
   h5,
   h6 {
-    font-size: ${fontSizes.lg}rem;
+    font-size: ${fontSizes.md}rem;
+    ${mq.xs(css`
+      font-size: ${fontSizes.lg}rem;
+    `)};
   }
   blockquote {
     margin-left: ${spacing.md}px;
@@ -105,6 +116,10 @@ export const typograpyStyles = css`
   ul,
   ol {
     margin-bottom: ${spacing.md}px;
+    margin-left: 22px;
+    ${mq.xs(css`
+      margin-left: 0;
+    `)};
 
     li {
       margin-bottom: ${spacing.xxs}px;
