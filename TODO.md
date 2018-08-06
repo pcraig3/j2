@@ -1,6 +1,8 @@
 # to do
 
 - add placeholder images
+- single pages for images
+- optimize images somehow
 - add real images
 - check if header tags are being inserted more than once
 - axe scan
