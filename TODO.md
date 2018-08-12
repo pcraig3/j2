@@ -1,6 +1,5 @@
 # to do
 
-- add placeholder images
 - single pages for images
 - optimize images somehow
 - add real images
@@ -11,6 +10,7 @@
 
 # done
 
+- ✅ add placeholder images
 - ✅ break words typography on small phones
 - ✅ local export
 - ✅ add aria attributes to menu
