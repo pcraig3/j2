@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { css } from 'react-emotion'
 import { assetPrefix } from '../next.config'
-import { fontSizes, mq, spacing } from './__styles'
+import { fontSizes, mq, spacing, colours } from './__styles'
 
 const logoStyles = css`
   position: fixed;
@@ -50,16 +50,16 @@ const logoStyles = css`
   & a span {
     padding: 0 ${spacing.xxs}px;
     display: inline-block;
-    background-color: bisque;
+    background-color: ${colours.secondary};
     border-bottom: 2px solid black;
     border-right: 2px solid black;
   }
   & a:hover span,
   & a:focus span {
-    color: mediumslateblue;
+    color: ${colours.primary};
     background-color: white;
-    border-bottom: 2px solid mediumslateblue;
-    border-right: 2px solid mediumslateblue;
+    border-bottom: 2px solid ${colours.primary};
+    border-right: 2px solid ${colours.primary};
   }
 `
 export default () => (

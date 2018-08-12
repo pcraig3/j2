@@ -3,6 +3,7 @@ import { css } from 'react-emotion'
 import { assetPrefix } from '../next.config'
 import {
   bisqueLinks,
+  colours,
   mq,
   pointRightLinks,
   pointLeftLinks,
@@ -74,12 +75,12 @@ const buttonStyles = css`
   padding: 0 ${spacing.xxs}px;
   width: 30px;
   text-align: center;
-  border: 2px solid bisque;
+  border: 2px solid ${colours.secondary};
 
   :hover,
   :focus {
-    background-color: bisque;
-    outline: 2px solid darkturquoise;
+    background-color: ${colours.secondary};
+    outline: 2px solid ${colours.focus};
   }
 
   ${mq.xs(css`

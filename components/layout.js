@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { withRouter } from 'next/router'
 import { css, injectGlobal } from 'react-emotion'
 import {
+  colours,
   typograpyStyles,
   layoutStyles,
   headerStyles,
@@ -28,14 +29,14 @@ const globalStyles = injectGlobal`
     padding: 0;
   }
   *:focus {
-    outline: 2px solid darkturquoise;
+    outline: 2px solid ${colours.focus};
   }
   a,
   a:visited,
   button {
     display: inline-block;
     text-decoration: none;
-    color: mediumslateblue;
+    color: ${colours.primary};
   }
 
   img {

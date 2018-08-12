@@ -23,6 +23,12 @@ export const spacing = {
   xxl: spacingBase * 3,
 }
 
+export const colours = {
+  primary: 'mediumslateblue',
+  secondary: '#FFDFDC',
+  focus: 'darkturquoise',
+}
+
 const breakpoints = {
   xxs: 321,
   xs: 440,
@@ -138,7 +144,7 @@ export const typograpyStyles = css`
 export const bisqueLinks = css`
   a:hover,
   a:focus {
-    background-color: bisque;
+    background-color: ${colours.secondary};
   }
 `
 
@@ -208,7 +214,7 @@ export const headerStyles = css`
   width: 100%;
   padding: ${spacing.sm}px ${spacing.sm}px;
   text-align: right;
-  border-top: 2px solid bisque;
+  border-top: 2px solid ${colours.secondary};
   background-color: white;
 
   ${mq.xs(css`
