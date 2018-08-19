@@ -10,36 +10,40 @@ const imgStyles = css`
   overflow: initial;
   padding: ${spacing.sm}px;
   position: relative;
-  margin-bottom: ${spacing.sm} !important;
+  margin-bottom: ${spacing.xl}px !important;
 
   ${mq.xs(css`
     padding: 20px;
   `)};
 
   img {
-    filter: grayscale(100%) contrast(1) blur(0);
     flex: 1 0 100%;
     height: 100%;
-    max-width: 100%;
-    mix-blend-mode: multiply;
-    object-fit: cover;
-    opacity: 1;
     position: relative;
     width: 100%;
   }
 
-  &::before {
-    background-color: #7b68ee;
-    bottom: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    mix-blend-mode: soft-light;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+  :not(:hover) {
+    img {
+      filter: grayscale(100%) contrast(1) blur(0);
+      mix-blend-mode: multiply;
+      object-fit: cover;
+      opacity: 1;
+    }
+
+    &::before {
+      background-color: #7b68ee;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      mix-blend-mode: soft-light;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
   }
 `
 
