@@ -3,13 +3,13 @@
 - single pages for images
 - optimize images somehow
 - add real images
-- check if header tags are being inserted more than once
-- axe scan
 - pally scan
-- wcag colour contrast
+- fix for (potentially) low-contrast image captions
 
 # done
 
+- ✅ axe scan
+- ✅ check if header tags are being inserted more than once
 - ✅ add placeholder images
 - ✅ break words typography on small phones
 - ✅ local export

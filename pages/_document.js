@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           {/* tags in here appears after the tags in <HEAD> in Layout */}
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
