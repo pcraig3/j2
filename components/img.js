@@ -3,7 +3,7 @@ import { spacing, colours, mq } from './__styles'
 import { assetPrefix } from '../next.config'
 
 const imgStyles = css`
-  background-color: #ffe4c4; /* can't use colours here because they get distorted */
+  background-color: ${colours.secondary};
   display: flex;
   flex: 1 1 100%;
   height: 100%;
@@ -24,6 +24,8 @@ const imgStyles = css`
   }
 
   :not(:hover) {
+    background-color: #ffe4c4; /* can't use colours here because they get distorted */
+
     img {
       filter: grayscale(100%) contrast(1) blur(0);
       mix-blend-mode: multiply;
@@ -52,9 +54,15 @@ const captionStyles = css`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
   color: ${colours.secondary};
   z-index: 2;
+  background: linear-gradient(rgba(20, 20, 20, 1), rgba(20, 20, 20, 0));
+  padding-bottom: ${spacing.lg}px;
+
+  ${mq.xs(css`
+    width: calc(100% - 40px);
+  `)};
 
   > * {
     margin: 0;
@@ -64,6 +72,7 @@ const captionStyles = css`
 
   h3 {
     text-align: right;
+    margin-right: 1px;
   }
 `
 

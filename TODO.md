@@ -4,10 +4,10 @@
 - optimize images somehow
 - add real images
 - pally scan
-- fix for (potentially) low-contrast image captions
 
 # done
 
+- ✅ fix for (potentially) low-contrast image captions
 - ✅ axe scan
 - ✅ check if header tags are being inserted more than once
 - ✅ add placeholder images
