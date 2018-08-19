@@ -67,12 +67,12 @@ const captionStyles = css`
   }
 `
 
-export default ({ src, title, year }) => (
-  <div className={imgStyles}>
-    <div className={captionStyles}>
+export default ({ src, alt, title, year }) => (
+  <figure className={imgStyles}>
+    <figcaption className={captionStyles}>
       <h2>{title}</h2>
       <h3>{year}</h3>
-    </div>
-    <img src={`${assetPrefix}${src}`} />
-  </div>
+    </figcaption>
+    <img src={`${assetPrefix}${src}`} alt={alt} />
+  </figure>
 )
