@@ -1,5 +1,6 @@
 # to do
 
+- add blog post template
 - single pages for images
 - optimize images somehow
 - add real images
